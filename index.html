@@ -164,20 +164,20 @@
       
         <h1 id="这是一道神奇的题目"><a href="#这是一道神奇的题目" class="headerlink" title="这是一道神奇的题目"></a>这是一道神奇的题目</h1><h3 id="原题如下"><a href="#原题如下" class="headerlink" title="原题如下"></a>原题如下</h3><p>请编写一个函数，使其可以删除某个链表中给定的（非末尾）节点，你将只被给定要求被删除的节点。<br>现有一个链表 – head = [4,5,1,9]，它可以表示为:</p>
 <p><img src="/2019/03/23/这是一道神奇的题目/237_example.png" alt="图解" title="图解"></p>
-<p><strong>示例 1:</strong></p>
 <ul>
+<li><strong>示例 1:</strong></li>
 <li><strong>输入:</strong> head = [4,5,1,9], node = 5</li>
 <li><strong>输出:</strong> [4,1,9]</li>
 <li><strong>解释:</strong> 给定你链表中值为 5 的第二个节点，那么在调用了你的函数之后，该链表应变为 4 -&gt; 1 -&gt; 9.</li>
 </ul>
-<p><strong>示例 2:</strong></p>
 <ul>
+<li><strong>示例 2:</strong></li>
 <li><strong>输入:</strong> head = [4,5,1,9], node = 1</li>
 <li><strong>输出:</strong> [4,5,9]</li>
 <li><strong>解释:</strong> 给定你链表中值为 1 的第三个节点，那么在调用了你的函数之后，该链表应变为 4 -&gt; 5 -&gt; 9.</li>
 </ul>
-<p><strong>说明:</strong></p>
 <ul>
+<li><strong>说明:</strong></li>
 <li>链表至少包含两个节点。</li>
 <li>链表中所有节点的值都是唯一的。</li>
 <li>给定的节点为非末尾节点并且一定是链表中的一个有效节点。</li>
@@ -188,7 +188,9 @@
 <hr>
 <h3 id="答案"><a href="#答案" class="headerlink" title="答案"></a>答案</h3><h4 id="C："><a href="#C：" class="headerlink" title="C："></a>C：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void deleteNode(struct ListNode* node) &#123;</span><br><span class="line">    node-&gt;val = node-&gt;next-&gt;val;</span><br><span class="line">    node-&gt;next = node-&gt;next-&gt;next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h4 id="Java："><a href="#Java：" class="headerlink" title="Java："></a>Java：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public void deleteNode(ListNode node) &#123;</span><br><span class="line">        node.val = node.next.val;</span><br><span class="line">        node.next = node.next.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="神奇吧。。。。"><a href="#神奇吧。。。。" class="headerlink" title="神奇吧。。。。"></a>神奇吧。。。。</h2><p>题目来自LeetCode</p>
+<p>神奇吧。。。。</p>
+<hr>
+<p>题目来自LeetCode</p>
 <h6 id="敬请斧正"><a href="#敬请斧正" class="headerlink" title="敬请斧正"></a>敬请斧正</h6>
       
 
