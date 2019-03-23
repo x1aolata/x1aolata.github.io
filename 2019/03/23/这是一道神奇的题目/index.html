@@ -16,7 +16,7 @@
 <meta property="og:description" content="这是一道神奇的题目原题如下请编写一个函数，使其可以删除某个链表中给定的（非末尾）节点，你将只被给定要求被删除的节点。现有一个链表 – head = [4,5,1,9]，它可以表示为:  示例 1:  输入: head = [4,5,1,9], node = 5 输出: [4,1,9] 解释: 给定你链表中值为 5 的第二个节点，那么在调用了你的函数之后，该链表应变为 4 -&amp;gt; 1 -&amp;gt;">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/2019/03/23/这是一道神奇的题目/237_example.png">
-<meta property="og:updated_time" content="2019-03-23T06:45:58.482Z">
+<meta property="og:updated_time" content="2019-03-23T06:48:22.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="这是一道神奇的题目">
 <meta name="twitter:description" content="这是一道神奇的题目原题如下请编写一个函数，使其可以删除某个链表中给定的（非末尾）节点，你将只被给定要求被删除的节点。现有一个链表 – head = [4,5,1,9]，它可以表示为:  示例 1:  输入: head = [4,5,1,9], node = 5 输出: [4,1,9] 解释: 给定你链表中值为 5 的第二个节点，那么在调用了你的函数之后，该链表应变为 4 -&amp;gt; 1 -&amp;gt;">
@@ -190,10 +190,9 @@
 <hr>
 <p>刚开始看到这个题，惯性思维，找到头结点，遍历链表，找到要删除的那个元素。<br>结果发现没给头结点，没有头指针，怎么遍历啊。<br>一度以为智商出现了问题，题都读不懂了<br>最后，才发现自己是个智障，<del>‘卧槽 卧槽 卧槽’</del>，原来是这样的<br>思维太局限了，</p>
 <hr>
-<h3 id="答案"><a href="#答案" class="headerlink" title="答案"></a>答案</h3><h4 id="C"><a href="#C" class="headerlink" title="C"></a>C</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void deleteNode(struct ListNode* node) &#123;</span><br><span class="line">    node-&gt;val = node-&gt;next-&gt;val;</span><br><span class="line">    node-&gt;next = node-&gt;next-&gt;next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public void deleteNode(ListNode node) &#123;</span><br><span class="line">        node.val = node.next.val;</span><br><span class="line">        node.next = node.next.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>题目来自LeetCode</p>
+<h3 id="答案"><a href="#答案" class="headerlink" title="答案"></a>答案</h3><h4 id="C："><a href="#C：" class="headerlink" title="C："></a>C：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void deleteNode(struct ListNode* node) &#123;</span><br><span class="line">    node-&gt;val = node-&gt;next-&gt;val;</span><br><span class="line">    node-&gt;next = node-&gt;next-&gt;next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="Java："><a href="#Java：" class="headerlink" title="Java："></a>Java：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public void deleteNode(ListNode node) &#123;</span><br><span class="line">        node.val = node.next.val;</span><br><span class="line">        node.next = node.next.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="神奇吧。。。。"><a href="#神奇吧。。。。" class="headerlink" title="神奇吧。。。。"></a>神奇吧。。。。</h2><p>题目来自LeetCode</p>
 <h6 id="敬请斧正"><a href="#敬请斧正" class="headerlink" title="敬请斧正"></a>敬请斧正</h6>
       
 
