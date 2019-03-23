@@ -6,11 +6,11 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>蒋若辉 | Blog</title>
+  <title>Archives: 2019/3 | 蒋若辉 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="蒋若辉 | Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/2019/03/index.html">
 <meta property="og:site_name" content="蒋若辉 | Blog">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -142,231 +142,47 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-这是一道神奇的题目" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/23/这是一道神奇的题目/">这是一道神奇的题目</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/23/这是一道神奇的题目/" class="archive-article-date">
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2019" class="archive-year">2019</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2019/03/23/这是一道神奇的题目/" class="archive-article-date">
   	<time datetime="2019-03-23T06:11:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-23</time>
 </a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="这是一道神奇的题目"><a href="#这是一道神奇的题目" class="headerlink" title="这是一道神奇的题目"></a>这是一道神奇的题目</h1><h3 id="原题如下"><a href="#原题如下" class="headerlink" title="原题如下"></a>原题如下</h3><p>请编写一个函数，使其可以删除某个链表中给定的（非末尾）节点，你将只被给定要求被删除的节点。<br>现有一个链表 – head = [4,5,1,9]，它可以表示为:</p>
-<p><img src="/2019/03/23/这是一道神奇的题目/237_example.png" alt="图解" title="图解"></p>
-<p><strong>示例 1:</strong></p>
-<ul>
-<li><strong>输入:</strong> head = [4,5,1,9], node = 5</li>
-<li><strong>输出:</strong> [4,1,9]</li>
-<li><strong>解释:</strong> 给定你链表中值为 5 的第二个节点，那么在调用了你的函数之后，该链表应变为 4 -&gt; 1 -&gt; 9.</li>
-</ul>
-<p><strong>示例 2:</strong></p>
-<ul>
-<li><strong>输入:</strong> head = [4,5,1,9], node = 1</li>
-<li><strong>输出:</strong> [4,5,9]</li>
-<li><strong>解释:</strong> 给定你链表中值为 1 的第三个节点，那么在调用了你的函数之后，该链表应变为 4 -&gt; 5 -&gt; 9.</li>
-</ul>
-<p><strong>说明:</strong></p>
-<ul>
-<li>链表至少包含两个节点。</li>
-<li>链表中所有节点的值都是唯一的。</li>
-<li>给定的节点为非末尾节点并且一定是链表中的一个有效节点。</li>
-<li>不要从你的函数中返回任何结果。</li>
-</ul>
-<hr>
-<p>刚开始看到这个题，惯性思维，找到头结点，遍历链表，找到要删除的那个元素。<br>结果发现没给头结点，没有头指针，怎么遍历啊。<br>一度以为智商出现了问题，题都读不懂了<br>最后，才发现自己是个智障，<del>‘卧槽 卧槽 卧槽’</del>，原来是这样的<br>思维太局限了，</p>
-<hr>
-<h3 id="答案"><a href="#答案" class="headerlink" title="答案"></a>答案</h3><h4 id="C"><a href="#C" class="headerlink" title="C"></a>C</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">void deleteNode(struct ListNode* node) &#123;</span><br><span class="line">    node-&gt;val = node-&gt;next-&gt;val;</span><br><span class="line">    node-&gt;next = node-&gt;next-&gt;next;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class Solution &#123;</span><br><span class="line">    public void deleteNode(ListNode node) &#123;</span><br><span class="line">        node.val = node.next.val;</span><br><span class="line">        node.next = node.next.next;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<hr>
-<p>题目来自LeetCode</p>
-<h6 id="敬请斧正"><a href="#敬请斧正" class="headerlink" title="敬请斧正"></a>敬请斧正</h6>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/23/这是一道神奇的题目/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
         </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTML-课程作业" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+    	 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/27/HTML-课程作业/">HTML 课程作业</a>
+      <a class="archive-article-title" href="/2019/03/23/这是一道神奇的题目/">这是一道神奇的题目</a>
     </h1>
   
 
-        
-        <a href="/2019/02/27/HTML-课程作业/" class="archive-article-date">
-  	<time datetime="2019-02-27T14:40:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="此篇主要说一下我上学期做的一个HTML网页"><a href="#此篇主要说一下我上学期做的一个HTML网页" class="headerlink" title="此篇主要说一下我上学期做的一个HTML网页"></a>此篇主要说一下我上学期做的一个HTML网页</h1><p>由于是大一的原因，这门实验课是我仅有的两门较为专业的专业课之一，所以我很用心在做。<br>这个网页的内容是关于漫画<strong>鬼刀</strong>的介绍</p>
-<h3 id="以下为网页部分截图："><a href="#以下为网页部分截图：" class="headerlink" title="以下为网页部分截图："></a>以下为网页部分截图：</h3><p><img src="/2019/02/27/HTML-课程作业/关于鬼刀.png" alt="关于鬼刀" title="关于鬼刀"><br><img src="/2019/02/27/HTML-课程作业/概览人物.jpg" alt="概览人物" title="概览人物"><br><img src="/2019/02/27/HTML-课程作业/经典美句.png" alt="经典美句" title="经典美句"></p>
-<h2 id="实验过程中遇到问题及解决方法："><a href="#实验过程中遇到问题及解决方法：" class="headerlink" title="实验过程中遇到问题及解决方法："></a>实验过程中遇到问题及解决方法：</h2><p>分块时无法达到自己想要的效果，遇到很多无法解决的乱码问题，通过网络查询后解决。</p>
-<h2 id="实验心得："><a href="#实验心得：" class="headerlink" title="实验心得："></a>实验心得：</h2><p>通过对本章节的学习，学会了超文本标记语言html的简单应用，并且可以独立完成简单网页的制作，对自己是一个很大的提升。</p>
-<hr>
-<h2 id="实验源码"><a href="#实验源码" class="headerlink" title="实验源码:"></a>实验源码:</h2><h3 id="1、div分块（部分）"><a href="#1、div分块（部分）" class="headerlink" title="1、div分块（部分）"></a>1、div分块（部分）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> div#container &#123;</span><br><span class="line">   width: 100%;</span><br><span class="line">   height: 2500px;</span><br><span class="line">   background-color:#E5E5E5;</span><br><span class="line">   &#125;</span><br><span class="line">   div#heading &#123;</span><br><span class="line">   width: 100%;</span><br><span class="line">   height: 35px;</span><br><span class="line">   background-color:#FFFFE0;</span><br><span class="line">line-height:35px;</span><br><span class="line">   &#125;</span><br><span class="line">   div#heading2 &#123;</span><br><span class="line">   width: 100%;</span><br><span class="line">   height: 900px;</span><br><span class="line">   background-color:#E5E5E5;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="2、插入文字（部分）"><a href="#2、插入文字（部分）" class="headerlink" title="2、插入文字（部分）"></a>2、插入文字（部分）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">   &lt;strong&gt;</span><br><span class="line">  &lt;FONT  COLOR=#404040 SIZE=7&gt;概览&lt;/FONT&gt;&lt;FONT  COLOR=#006400 SIZE=7&gt;人物&lt;/FONT&gt;&lt;BR&gt;</span><br><span class="line">&amp;nbsp&amp;nbsp&lt;FONT  COLOR=#636363 SIZE=4&gt;人物信息&lt;/FONT&gt;</span><br><span class="line">  &lt;/strong&gt;</span><br><span class="line">  &lt;BR&gt;</span><br><span class="line">  &lt;FONT  COLOR=#404040 SIZE=4&gt;海琴烟（冰公主）：&lt;/FONT&gt;</span><br><span class="line">  &lt;FONT  COLOR=#636363 SIZE=3&gt;</span><br><span class="line">  海琴国国王在冰川里捡到的女孩，非常受国王疼爱，但国民认为她是会带来不幸的怪物，因此非常讨厌她。圣堂的人要国王交出她，国王拒绝之后引发了一场战争。心思单纯善良的她离开了自己的国家，不希望再给人们带来任何伤害。</span><br><span class="line">  &lt;/FONT&gt; &lt;BR&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="3、插入图片（部分）"><a href="#3、插入图片（部分）" class="headerlink" title="3、插入图片（部分）"></a>3、插入图片（部分）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">   &lt;div id=&quot;body1&quot;&gt;</span><br><span class="line">        &lt;img src=&quot;风铃.jpg&quot;   WIDTH=400 HEIGHT=225 ALIGN=MIDDLE&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div id=&quot;body2&quot;&gt;</span><br><span class="line">       &lt;img src=&quot;海琴烟冰公主.jpg&quot;   WIDTH=400 HEIGHT=225 ALIGN=MIDDLE&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div id=&quot;body3&quot;&gt;</span><br><span class="line">       &lt;img src=&quot;风铃公主.jpg&quot;   WIDTH=400 HEIGHT=225 ALIGN=MIDDLE&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div id=&quot;body4&quot;&gt;</span><br><span class="line">       &lt;img src=&quot;冰公主（宽）.jpg&quot;   WIDTH=400 HEIGHT=225 ALIGN=MIDDLE&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<h3 id="4、插入视频（部分）"><a href="#4、插入视频（部分）" class="headerlink" title="4、插入视频（部分）"></a>4、插入视频（部分）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;character1&quot;&gt;</span><br><span class="line">    &amp;nbsp&lt;BR&gt;</span><br><span class="line">    &lt;video width=&quot;512&quot; height=&quot;285&quot;  loop  autoplay=&quot;autoplay&quot;&gt;</span><br><span class="line">       &lt;source src=&quot;海琴烟.mp4&quot; type=&quot;video/mp4&quot;&gt;</span><br><span class="line">&lt;/video&gt;&lt;BR&gt;	       </span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<h6 id="敬请斧正"><a href="#敬请斧正" class="headerlink" title="敬请斧正"></a>敬请斧正</h6>
-      
+        <div class="article-info info-on-right">
+          
+          
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/27/HTML-课程作业/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
+        </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
-    <article id="post-My-First-Blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
+  
+    </div></section>
+  
+
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/02/24/My-First-Blog/">My First Blog</a>
-    </h1>
-  
-
-        
-        <a href="/2019/02/24/My-First-Blog/" class="archive-article-date">
-  	<time datetime="2019-02-24T04:34:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-24</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="这是我的第一篇博客"><a href="#这是我的第一篇博客" class="headerlink" title="这是我的第一篇博客"></a>这是我的第一篇博客</h2><p>我的名字叫 <strong>蒋若辉</strong><br>就这样</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/24/My-First-Blog/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-  
 
 
           </div>
@@ -388,9 +204,9 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
+		isHome: false,
 		isPost: false,
-		isArchive: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
