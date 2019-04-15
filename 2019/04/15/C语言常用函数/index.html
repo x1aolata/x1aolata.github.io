@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | 蒋若辉 | Blog</title>
+  <title>C语言常用函数 | 蒋若辉 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="蒋若辉 | Blog">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="C语言常用函数判断素数介绍：参数为一个整数，如果它是素数，return 1 ；如果它不是素数，return 0 ；(注：需要引入math库)1234567891011121314151617181920212223int isPrime(int num)&amp;#123;    if(num&amp;lt;=1)    &amp;#123;        return 0;    &amp;#125;    else if(n">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言常用函数">
+<meta property="og:url" content="http://yoursite.com/2019/04/15/C语言常用函数/index.html">
 <meta property="og:site_name" content="蒋若辉 | Blog">
+<meta property="og:description" content="C语言常用函数判断素数介绍：参数为一个整数，如果它是素数，return 1 ；如果它不是素数，return 0 ；(注：需要引入math库)1234567891011121314151617181920212223int isPrime(int num)&amp;#123;    if(num&amp;lt;=1)    &amp;#123;        return 0;    &amp;#125;    else if(n">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-15T10:31:42.071Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="蒋若辉 | Blog">
+<meta name="twitter:title" content="C语言常用函数">
+<meta name="twitter:description" content="C语言常用函数判断素数介绍：参数为一个整数，如果它是素数，return 1 ；如果它不是素数，return 0 ；(注：需要引入math库)1234567891011121314151617181920212223int isPrime(int num)&amp;#123;    if(num&amp;lt;=1)    &amp;#123;        return 0;    &amp;#125;    else if(n">
   
     <link rel="alternative" href="/atom.xml" title="蒋若辉 | Blog" type="application/atom+xml">
   
@@ -140,184 +144,170 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-C语言常用函数" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      C语言常用函数
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/15/C语言常用函数/" class="archive-article-date">
+
+        
+        <a href="/2019/04/15/C语言常用函数/" class="archive-article-date">
   	<time datetime="2019-04-15T09:30:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-15</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/15/C语言常用函数/">C语言常用函数</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="C语言常用函数"><a href="#C语言常用函数" class="headerlink" title="C语言常用函数"></a>C语言常用函数</h1><h3 id="判断素数"><a href="#判断素数" class="headerlink" title="判断素数"></a>判断素数</h3><p><strong>介绍：</strong><br>参数为一个整数，<br>如果它是素数，return 1 ；<br>如果它不是素数，return 0 ；<br>(注：需要引入math库)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">int isPrime(int num)</span><br><span class="line">&#123;</span><br><span class="line">    if(num&lt;=1)</span><br><span class="line">    &#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">    else if(num==2)</span><br><span class="line">    &#123;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line">    else</span><br><span class="line">    &#123;</span><br><span class="line">        int i;</span><br><span class="line">        for (i=2; i&lt;=sqrt(num); i++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(num%i==0)</span><br><span class="line">            &#123;</span><br><span class="line">                return 0;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p><strong>介绍：</strong><br>参数为一个整型数组头地址与数组长度（小—&gt;大）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">void sort_bubble(int arr[],int n)</span><br><span class="line">&#123;</span><br><span class="line">    int i,j;</span><br><span class="line">    int flag;</span><br><span class="line">    for(i=0; i&lt;n-1; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        flag=1;</span><br><span class="line">        for(j=0; j&lt;n-i-1; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(arr[j]&gt;arr[j+1])</span><br><span class="line">            &#123;</span><br><span class="line">                arr[j]=arr[j]+arr[j+1]-(arr[j+1]=arr[j]);</span><br><span class="line">                flag=0;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(flag)</span><br><span class="line">        &#123;</span><br><span class="line">            break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="选择排序-标准版"><a href="#选择排序-标准版" class="headerlink" title="选择排序(标准版)"></a>选择排序(标准版)</h3><p><strong>介绍：</strong><br>参数为一个整型数组头地址与数组长度（小—&gt;大）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">void sort_select(int arr[],int n)</span><br><span class="line">&#123;</span><br><span class="line">    int i,j;</span><br><span class="line">    int min;</span><br><span class="line">    for(i=0; i&lt;n-1; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        min=i;</span><br><span class="line">        for(j=i+1; j&lt;n; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(arr[min]&gt;arr[j])</span><br><span class="line">            &#123;</span><br><span class="line">                min=j;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        if(min!=i)</span><br><span class="line">        &#123;</span><br><span class="line">            arr[i]=arr[i]+arr[min]-(arr[min]=arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="选择排序（若辉版）"><a href="#选择排序（若辉版）" class="headerlink" title="选择排序（若辉版）"></a>选择排序（若辉版）</h3><p><strong>介绍：</strong><br>参数为一个整型数组头地址与数组长度（小—&gt;大）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">void sort_select(int arr[],int n)</span><br><span class="line">&#123;</span><br><span class="line">    int i,j;</span><br><span class="line">    for(i=0; i&lt;n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        for(j=i; j&lt;n; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            if(arr[i]&gt;arr[j])</span><br><span class="line">            &#123;</span><br><span class="line">                arr[i]=arr[i]+arr[j]-(arr[j]=arr[i]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>亲，支付宝微信都可以呢<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/支付宝.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/微信.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/04/15/C语言常用函数/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/04/15/Android笔记/" class="archive-article-date">
-  	<time datetime="2019-04-15T02:57:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-04-15</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/04/15/Android笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Android笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/04/15/Android笔记/">Android笔记</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/31/睡眠排序/" class="archive-article-date">
-  	<time datetime="2019-03-31T06:53:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/31/睡眠排序/">睡眠排序</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/03/23/这是一道神奇的题目/" class="archive-article-date">
-  	<time datetime="2019-03-23T06:11:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/03/23/这是一道神奇的题目/">这是一道神奇的题目</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/27/HTML-课程作业/" class="archive-article-date">
-  	<time datetime="2019-02-27T14:40:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-27</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/27/HTML-课程作业/">HTML 课程作业</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/02/24/My-First-Blog/" class="archive-article-date">
-  	<time datetime="2019-02-24T04:34:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/02/24/My-First-Blog/">My First Blog</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -340,8 +330,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
