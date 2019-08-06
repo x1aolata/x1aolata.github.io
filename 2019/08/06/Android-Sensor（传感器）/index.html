@@ -5,13 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>全排列问题（递归算法）的理解与实现 - 蒋若辉 | Blog</title>
+    <title>Android Sensor（传感器） - 蒋若辉 | Blog</title>
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate">
     <meta name="keywords" content="x1aolata,"> 
-    <meta name="description" content="全排列问题从n个不同元素中任取m（m≤n）个元素，按照一定的顺序排列起来，叫做从n个不同元素中取出m个元素的一个排列。当m=n时所有的排列情况叫全排列。
-例如： 输出1到n的全排列。每种排列占一行，,"> 
+    <meta name="description" content="Android 常见传感器首先，让Activity实现SensorEventListener接口(实现接口需要复写onSensorChanged，onAccuracyChanged方法)，便于监听来,"> 
     <meta name="author" content="蒋若辉"> 
     <link rel="alternative" href="atom.xml" title="蒋若辉 | Blog" type="application/atom+xml"> 
     <link rel="icon" href="/img/favicon.png"> 
@@ -36,7 +35,7 @@
     <div class="bar" style="width: 0;"></div>
     <a class="icon-home image-icon" href="javascript:;" data-url="http://yoursite.com"></a>
     <div title="播放/暂停" class="icon-play"></div>
-    <h3 class="subtitle">全排列问题（递归算法）的理解与实现</h3>
+    <h3 class="subtitle">Android Sensor（传感器）</h3>
     <div class="social">
         <!--<div class="like-icon">-->
             <!--<a href="javascript:;" class="likeThis active"><span class="icon-like"></span><span class="count">76</span></a>-->
@@ -54,17 +53,19 @@
     <div class="section">
         <div class="article">
     <div class="main">
-        <h1 class="title">全排列问题（递归算法）的理解与实现</h1>
+        <h1 class="title">Android Sensor（传感器）</h1>
         <div class="stuff">
-            <span>七月 21, 2019</span>
+            <span>八月 06, 2019</span>
             
-  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/C语言/">C语言</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/算法/">算法</a></li></ul>
+  <ul class="post-tags-list"><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Android/">Android</a></li><li class="post-tags-list-item"><a class="post-tags-list-link" href="/tags/Sensor/">Sensor</a></li></ul>
 
 
         </div>
         <div class="content markdown">
-            <h2 id="全排列问题"><a href="#全排列问题" class="headerlink" title="全排列问题"></a>全排列问题</h2><p>从n个不同元素中任取m（m≤n）个元素，按照一定的顺序排列起来，叫做从n个不同元素中取出m个元素的一个排列。当m=n时所有的排列情况叫全排列。</p>
-<p><strong>例如：</strong> 输出1到n的全排列。每种排列占一行，数字间无空格。排列的输出顺序为字典序</p>
+            <h1 id="Android-常见传感器"><a href="#Android-常见传感器" class="headerlink" title="Android 常见传感器"></a>Android 常见传感器</h1><p>首先，让Activity实现SensorEventListener接口(实现接口需要复写<strong>onSensorChanged</strong>，<strong>onAccuracyChanged</strong>方法)，便于监听来刷新数据<br>然后创建SensorManager对象，然后为它注册加速度传感器监听器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//获取系统服务</span><br><span class="line">sensorManager = (SensorManager) getSystemService(Context.SENSOR_SERVICE);</span><br><span class="line"></span><br><span class="line">//      注册事件</span><br><span class="line">//      * 参数1 ：SensorEventListener监听器</span><br><span class="line">//      * 参数2 ：Sensor 一个服务可能有多个Sensor实现，此处调用getDefaultSensor获取默认的Sensor</span><br><span class="line">//      * 参数3 ：模式 可选数据变化的刷新频率，多少微秒取一次。</span><br><span class="line">sensorManager.registerListener(this, sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER),SensorManager.SENSOR_DELAY_NORMAL);</span><br></pre></td></tr></table></figure>
+<h3 id="加速度传感器-Accelerometer"><a href="#加速度传感器-Accelerometer" class="headerlink" title="加速度传感器(Accelerometer)"></a>加速度传感器(Accelerometer)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TYPE_ACCELEROMETER</span><br></pre></td></tr></table></figure>
+<h3 id="距离传感器（Proximity）"><a href="#距离传感器（Proximity）" class="headerlink" title="距离传感器（Proximity）"></a>距离传感器（Proximity）</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TYPE_PROXIMITY</span><br></pre></td></tr></table></figure>
 
             <!--[if lt IE 9]><script>document.createElement('audio');</script><![endif]-->
             <audio id="audio" loop="1" preload="auto" controls="controls" data-autoplay="false">
@@ -79,7 +80,7 @@
     </div>
     
         <div class="side">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#全排列问题"><span class="toc-number">1.</span> <span class="toc-text">全排列问题</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Android-常见传感器"><span class="toc-number">1.</span> <span class="toc-text">Android 常见传感器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#加速度传感器-Accelerometer"><span class="toc-number">1.0.1.</span> <span class="toc-text">加速度传感器(Accelerometer)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#距离传感器（Proximity）"><span class="toc-number">1.0.2.</span> <span class="toc-text">距离传感器（Proximity）</span></a></li></ol></li></ol>
         </div>
     
 </div>
